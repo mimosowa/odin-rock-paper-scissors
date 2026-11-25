@@ -2,9 +2,9 @@
 function getComputerChoice() {
     const randomNumber = Math.random();
 
-    if (randomNumber  <= 0.33) {
+    if (randomNumber  < 0.33) {
         return "rock";
-    } else if (randomNumber <= 0.66) {
+    } else if (randomNumber < 0.66) {
         return "paper";
     } else {
         return "scissors";
@@ -47,7 +47,15 @@ playRound(getHumanChoice(), getComputerChoice());
 playRound(getHumanChoice(), getComputerChoice());
 playRound(getHumanChoice(), getComputerChoice());
 
-console.log(humanScore, computerScore);
+console.log(`Final score: Human ${humanScore} - Computer ${computerScore}`);
+
+if (humanScore > computerScore) {
+    console.log("You win!");
+} else if (computerScore > humanScore) {
+    console.log("Computer wins! you lose :(");
+} else {
+    console.log("It's a tie!");
+}
 
 }
 
